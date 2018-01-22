@@ -1,4 +1,3 @@
-
 const tag = 'Romanian'
 
 const notes = data.notes
@@ -7,12 +6,20 @@ const notes = data.notes
 
 const getRandom = (myList) => myList[Math.floor(Math.random() * myList.length)]
 
+let note1 = getRandom(notes)
+let note2 = getRandom(notes)
+let note3 = getRandom(notes)
+
 const printAtId = (id, s) => document.getElementById(id).innerHTML = s
 
-const next = () => {
-  printAtId('note1', getRandom(notes).front)
-  printAtId('note2', getRandom(notes).front)
-  printAtId('note3', getRandom(notes).front)
+const printNotes = (field = 'front') => {
+  printAtId('note1', note1[field])
+  printAtId('note2', note2[field])
+  printAtId('note3', note3[field])
 }
 
-next()
+printNotes()
+
+const showBack = () => {
+  printNotes('back')
+}
