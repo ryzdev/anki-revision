@@ -1,5 +1,11 @@
 const query = window.location.search.split('=')
-const tag = query.length > 1 ? query[1] : ''
+
+let tag
+if (query.length > 1) {
+  tag = query[1]
+} else {
+  alert('no query parameter language specified!')
+}
 
 const notes = data.notes
   .filter(note => note.tags.indexOf(tag) > -1)
